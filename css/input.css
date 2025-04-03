@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+    --color-blue: #131537;
+    --background-image-triangle: url(../images/triangle.svg);
+}

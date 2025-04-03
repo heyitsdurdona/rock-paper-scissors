@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Stone-Scissors</title>
+    <link rel="stylesheet" href="./css/output.css">
+</head>
+<body class="bg-blue">
+    <section class="pt-12 pb-16">
+        <div class="container max-w-[700px] mx-auto ">
+            <div class="py-[28px] px-[33px] border-[3px] border-solid border-white rounded-2xl flex justify-between">
+                <img src="./images/logo.svg" alt="logo">
+                <div class="max-w-[150px] w-full py-4 px-12 rounded-[8px] bg-white flex flex-col items-center">
+                    <span class="font-semibold text-[16px] text-[#2A45C2]">SCORE</span>
+                    <strong id="score" class="font-bold text-[64px] text-[#565468]">0</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+     <section id="gameZone">
+        <div class="container mx-auto max-w-[700px]">
+            <ul class="grid grid-cols-2 gap-x-20 gap-y-6 max-w-[476px] w-full mx-auto bg-triangle bg-no-repeat bg-center">
+                <li>
+                    <button class="js-hand">
+                        <img src="./images/paper.svg" alt="paper" width="198">
+                    </button>
+                </li>
+                <li>
+                    <button class="js-hand">
+                        <img src="./images/scissors.svg" alt="scissors" width="198">
+                    </button>
+                </li>
+                <li class="col-span-2 place-self-center">
+                    <button class="js-hand">
+                        <img src="./images/rock.svg" alt="rock" width="198">
+                    </button>
+                </li>
+
+            </ul>
+        </div>
+     </section>
+
+
+     <!-- Play Section -->
+     <section id="secondGameZone" class="hidden">
+        <div class="container mx-auto max-w-[700px]">
+            <div class="flex justify-between items-center gap-[70px]">
+                <img src="./images/paper.svg" alt="" id="user">
+                <div >
+                    <h2 id="status" class="font-bold capitalize text-white text-[46px] text-nowrap mb-4"></h2>
+                    <button id="refreshGame" class="py-[15px] px-[62px] bg-white rounded-[8px]">Play Again</button>
+                </div>
+                <img src="./images/hand-load.svg" alt="" id="robot">
+            </div>
+
+        </div>
+     </section>
+    
+     <script src="./js/main.js" type="module"></script>
+</body>
+</html>
