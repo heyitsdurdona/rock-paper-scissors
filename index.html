@@ -6,8 +6,8 @@
     <title>Rock-Stone-Scissors</title>
     <link rel="stylesheet" href="./css/output.css">
 </head>
-<body class="bg-blue">
-    <section class="pt-12 pb-16">
+<body class="bg-blue min-h-screen w-full">
+    <section class="pt-9 pb-16">
         <div class="container max-w-[700px] mx-auto ">
             <div class="py-[28px] px-[33px] border-[3px] border-solid border-white rounded-2xl flex justify-between">
                 <img src="./images/logo.svg" alt="logo">
@@ -18,34 +18,43 @@
             </div>
         </div>
     </section>
-
+    
     <!-- Game Section -->
-     <section id="gameZone">
-        <div class="container mx-auto max-w-[700px]">
-            <ul class="grid grid-cols-2 gap-x-20 gap-y-6 max-w-[476px] w-full mx-auto bg-triangle bg-no-repeat bg-center">
+    <section id="gameZone">
+        <div id="gameZoneMode" class="container mx-auto max-w-[700px]" data-mode="simple">
+            <ul id="list" class="grid max-w-[476px] w-full mx-auto">
                 <li>
                     <button class="js-hand">
-                        <img src="./images/paper.svg" alt="paper" width="198">
+                        <img src="./images/paper.svg" alt="paper">
                     </button>
                 </li>
                 <li>
                     <button class="js-hand">
-                        <img src="./images/scissors.svg" alt="scissors" width="198">
+                        <img src="./images/scissors.svg" alt="scissors" >
                     </button>
                 </li>
-                <li class="col-span-2 place-self-center">
+                <li class="">
                     <button class="js-hand">
-                        <img src="./images/rock.svg" alt="rock" width="198">
+                        <img src="./images/rock.svg" alt="rock" >
                     </button>
                 </li>
-
+                <li class="">
+                    <button class="js-hand">
+                        <img src="./images/puppy.svg" alt="puppy" >
+                    </button>
+                </li>
+                <li class="">
+                    <button class="js-hand">
+                        <img src="./images/lizard.svg" alt="lizard">
+                    </button>
+                </li>
             </ul>
         </div>
-     </section>
-
-
-     <!-- Play Section -->
-     <section id="secondGameZone" class="hidden">
+    </section>
+    
+    
+    <!-- Play Section -->
+    <section id="secondGameZone" class="hidden">
         <div class="container mx-auto max-w-[700px]">
             <div class="flex justify-between items-center gap-[70px]">
                 <img src="./images/paper.svg" alt="" id="user">
@@ -55,10 +64,24 @@
                 </div>
                 <img src="./images/hand-load.svg" alt="" id="robot">
             </div>
-
+            
         </div>
-     </section>
+    </section>
     
-     <script src="./js/main.js" type="module"></script>
+    <!-- buttons  -->
+    <div class="absolute right-3 bottom-0 flex gap-3 flex-col">
+        <button id="modeChanger" class="py-[15px] px-[62px] bg-white rounded-[8px]">Advanced</button>
+        <button id="rules" class="btn" onclick="my_modal_3.showModal()">Rules</button>
+        <dialog id="my_modal_3" class="modal">
+            <div class="modal-box">
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <img id="ruleImg" src="./images/rule-basic.svg" alt="basic rules" class="flex mx-auto">
+            </div>
+        </dialog>
+    </div>
+    
+    <script src="./js/main.js" type="module"></script>
 </body>
 </html>

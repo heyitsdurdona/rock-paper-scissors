@@ -1,5 +1,5 @@
 import { findWinner } from "./find-winner.js";
-import { elRobot, elScore, elStatus, elUser } from "./html-elements.js";
+import { elRobot, elScore, elStatus, elUser, elGameZoneMode} from "./html-elements.js";
 import { robotChooser } from "./robot-chooser.js";
 import { sectionSwapper } from "./section-swapper.js";
 
@@ -16,11 +16,19 @@ export function uiChanger(variant){
             elStatus.innerText = "TIED"
         } else if (winner === 'user'){
             elStatus.innerText = "YOU WON";
-            userScore++
+            if (elGameZoneMode.dataset.mode === 'simple'){
+                userScore++
+            } else {    
+                userScore += 2;
+            }
         }      
         else {
             elStatus.innerText = "YOU LOOSE";
-            userScore = Math.max(0, userScore-1);
+            if (elGameZoneMode.dataset.mode === 'simple'){
+                userScore = Math.max(0, userScore-1);
+            } else {
+                userScore = Math.max(0, userScore-2);
+            }
         }
         elScore.innerText = userScore;
     }, 1000);
